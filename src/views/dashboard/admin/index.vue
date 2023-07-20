@@ -11,7 +11,7 @@
     <el-row :gutter="32">
       <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
-          <raddar-chart />
+          <raddar-chart v-if="checkPermission(['editor'])" />
         </div>
       </el-col>
       <el-col :xs="24" :sm="24" :lg="8">

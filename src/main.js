@@ -20,6 +20,10 @@ import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
 
+import VueI18n from 'vue-i18n'
+import zh from './lang/zh'
+import en from './lang/en'
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -28,10 +32,20 @@ import * as filters from './filters' // global filters
  * Currently MockJs will be used in the production environment,
  * please remove it before going online ! ! !
  */
-if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
-  mockXHR()
-}
+// if (process.env.NODE_ENV === 'production') {
+//   const { mockXHR } = require('../mock')
+//   mockXHR()
+// }
+
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  locale: 'zh', // 默认语言为中文
+  messages: {
+    zh,
+    en
+  }
+})
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
@@ -46,6 +60,7 @@ Object.keys(filters).forEach(key => {
 Vue.config.productionTip = false
 
 new Vue({
+  i18n,
   el: '#app',
   router,
   store,

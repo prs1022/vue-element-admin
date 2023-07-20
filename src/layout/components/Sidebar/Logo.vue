@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Element Admin',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '孔明',
+      logo: 'https://img2.baidu.com/it/u=2511410889,3267686274&fm=253&fmt=auto&app=138&f=JPEG?w=488&h=690'
     }
   }
 }
